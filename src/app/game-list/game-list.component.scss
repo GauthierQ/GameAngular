@@ -1,0 +1,111 @@
+/* Police du site */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+$width: 300px;
+
+h1 {
+ font-family: 'Poppins';
+ text-align: center;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.plr-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pt-10{
+  padding-top: 10px;
+}
+.pt-5{
+  padding-top: 5px;
+}
+
+article {
+  width: $width;
+  margin: 10px;
+  margin-top: 20px;
+  border: 1px solid silver;
+  header {
+    align-items: center;
+
+    .spacer {
+      flex: 1;
+    }
+
+    &+img {
+      width: auto;
+    }
+  }
+
+  &:hover {
+    border: 1px solid white;
+    border-bottom: 1px solid black;
+    transition: all 0.3s;
+    }
+
+  body{
+    margin-top: 10px;
+    height: 250px;
+  }
+
+  footer { 
+    margin-top: 10px;
+  }
+}
+
+
+img {
+  width: 100%;
+}
+
+#delete {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding:6px 0 6px 0;
+	font:Bold 13px Arial;
+	background:transparent;
+	color:#d11e06;
+  width:90px;
+  border-radius:0px;
+  margin-bottom: 10px;
+  border: solid 1px #d11e06;
+}
+#delete:hover {
+	background: #d11e06;
+	color:#fff;
+  border: solid 1px #FFF;
+  transition: all 0.3s;
+  cursor: pointer;
+
+}
+
+.center{
+  text-align: center;
+}
+
+.btn-zoom{
+  position: relative;
+  margin-left: 10px;
+  margin-right: auto;
+  padding:6px 12px;
+  background: black;
+	color:white;
+  border-radius:0px;
+  border: solid 1px black;
+  margin-bottom: 10px;
+}
+
+.btn-zoom:hover{
+  background: transparent;
+	color:black;
+  border: solid 1px black;
+  transition: all 0.3s;
+  cursor: pointer;
+}

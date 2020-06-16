@@ -1,0 +1,47 @@
+<h1>Jeux disponibles</h1>
+
+  <ng-template #loading>
+    <p class="center">Chargement...</p>
+  </ng-template>
+    
+  <app-game-list-filter (filter)="onFilter($event)"></app-game-list-filter>
+  
+  <div>
+    <button class="btn-zoom" (click)="sizeDown()"><b>-</b></button>
+    <button class="btn-zoom" (click)="sizeUp()"><b>+</b></button>
+    <button class="btn-zoom" (click)="sizeReset()">reset</button>
+  </div>
+  
+  <section *ngIf="filteredEntities; else loading"> 
+    <article *ngFor="let game of filteredEntities" [ngStyle]="{'width': width + 'px'}">
+      <header>
+        <img [src]="game.coverImage" alt="game logo">
+       
+      </header>
+      <body class="plr-10">
+        <div >
+          <h1>{{ game.title }}</h1>
+          <p class="pt-10"><b>Genre</b> : 
+          <!-- <select ng-options="game as game.genres for game in game"></select> -->
+          <span *ngFor="let genre of game.genres">{{ genre.name }} / </span> </p>
+        </div>
+        <p class="pt-5"><b>Note</b> : {{ game.note }}/10</p>
+        <div>
+          <p class="pt-5"><b>Editeur</b> : {{ game.publisher }}</p>
+        </div>
+        <main class="pt-5">
+          <b>Description</b> : <br>{{ truncate(game.description) }}
+        </main>
+      </body>
+      
+      
+      <footer>
+        <button
+          type="button"
+          (click)="delete(game.id)"
+          id="delete">
+          Supprimer
+        </button>
+      </footer>
+    </article>
+  </section>
